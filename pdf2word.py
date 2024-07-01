@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 
 """
-Put each page of a PDF file as an image into a WORD document
+Put each page of a PDF file (from a scanner) as an image into a WORD document
 
-pip install PyPDF2 pdf2image python-docx
+Requirements:
+pip install -r requirements.txt
+
+Usage:
+1 - download poppler from https://poppler.freedesktop.org/
+2 - save to the same folder, script uses ./poppler/bin as default path
+3 - run, select a PDF file => word docx
 """
 
 import docx
 from docx.shared import Inches
 from tkinter import filedialog
 from tkinter import Tk
-from pdf2image import convert_from_path, convert_from_bytes
+from pdf2image import convert_from_path
 from PyPDF2 import PdfFileReader, PdfFileWriter
 import os
 
